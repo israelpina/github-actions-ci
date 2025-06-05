@@ -4,12 +4,15 @@ on: push
 
 jobs:
   first_job:
-    name: "Compile"
+    name: "Print test"
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Print variable"
+      - name: "Print secret"
         run: echo "${{ secrets.TOKEN }}"
+
+      - name: "Print variable"
+        run: echo "${{ variables.NAME }}"
 
 
     
