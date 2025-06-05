@@ -11,8 +11,16 @@ jobs:
       - name: "Print secret"
         run: echo "${{ secrets.TOKEN }}"
 
-      - name: "Print variable"
-        run: echo "${{ variables.NAME }}"
+      #- name: "Print variable"
+      #  run: echo "${{ variables.NAME }}"
 
+  second_job:
+    name: "Compile"
+    runs-on: ubuntu-latest
 
-    
+    steps:
+      - name: "Setup"
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+  
