@@ -1,0 +1,15 @@
+name: Deploy
+
+on: push
+
+jobs:
+  first_job:
+    name: "Compile"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Print variable"
+        run: echo "${{ secrets.TOKEN }}"
+
+
+    
