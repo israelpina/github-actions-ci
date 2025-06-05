@@ -11,8 +11,8 @@ jobs:
       - name: "Print secret"
         run: echo "${{ secrets.TOKEN }}"
 
-      #- name: "Print variable"
-      #  run: echo "${{ variables.NAME }}"
+      - name: "Print variable"
+        run: echo "${{ vars.NAME }}"
 
   second_job:
     name: "Compile"
