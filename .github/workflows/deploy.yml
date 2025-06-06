@@ -33,9 +33,13 @@ jobs:
       - name: "Run tests"
         run: npm run test
 
+      - name: "Build page"
+        run: npm run build
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    # if: ${{ always() }}
     
     steps:
       - name: "Deploy"
