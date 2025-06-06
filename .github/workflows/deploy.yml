@@ -3,7 +3,7 @@ name: Deploy
 on: push
 
 jobs:
-  first_job:
+  print:
     name: "Print test"
     runs-on: ubuntu-latest
 
@@ -14,8 +14,8 @@ jobs:
       - name: "Print variable"
         run: echo "${{ vars.NAME }}"
 
-  second_job:
-    name: "Compile"
+  build:
+    name: "Build"
     runs-on: ubuntu-latest
 
     steps:
@@ -33,6 +33,14 @@ jobs:
       - name: "Run tests"
         run: npm run test
 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - name: "Deploy"
+        run: echo "Deploy...."
+    
 
 
 
